@@ -1,0 +1,36 @@
+# Panduan Serving Model dengan MLflow
+
+## 1. Menyimpan Model
+Pastikan Anda sudah menjalankan training dan model sudah dicatat di MLflow (lokal atau DagsHub). Model akan tersimpan di folder `mlruns` (lokal) atau di DagsHub (online).
+
+## 2. Menemukan Path Model
+Jika menggunakan MLflow lokal, path model biasanya:
+```
+mlruns/<experiment_id>/<run_id>/artifacts/model
+```
+Contoh: `mlruns/0/xxxxxxxxxxxx/artifacts/model`
+
+## 3. Menjalankan MLflow Model Serve
+Jalankan perintah berikut dari folder utama project:
+```
+mlflow models serve -m mlruns/<experiment_id>/<run_id>/artifacts/model -p 1234
+```
+Ganti `<experiment_id>` dan `<run_id>` sesuai hasil training Anda.
+
+## 4. Mengakses Endpoint
+Setelah serve berjalan, endpoint REST API model dapat diakses di:
+```
+http://localhost:1234/invocations
+```
+
+## 5. Contoh Request
+Kirim data ke endpoint menggunakan curl atau Postman:
+```
+curl -X POST http://localhost:1234/invocations \
+  -H 'Content-Type: application/json' \
+  -d '{"data": [[5.1, 3.5, 1.4, 0.2]]}'
+```
+
+## 6. Catatan
+- Pastikan environment sudah terinstall mlflow dan dependensi model.
+- Untuk serving dari artefak DagsHub, download model terlebih dahulu ke lokal.

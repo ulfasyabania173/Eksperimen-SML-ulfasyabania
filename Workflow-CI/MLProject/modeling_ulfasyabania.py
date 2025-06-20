@@ -5,12 +5,13 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 import mlflow
 import mlflow.sklearn
+import sys
 
 # Aktifkan autolog MLflow
 mlflow.sklearn.autolog()
 
-# Load preprocessed data
-DATA_PATH = 'Preprocessing/iris_preprocessing.csv'
+# Load preprocessed data dari argument command line
+DATA_PATH = sys.argv[1]
 df = pd.read_csv(DATA_PATH)
 
 # Pisahkan fitur dan target

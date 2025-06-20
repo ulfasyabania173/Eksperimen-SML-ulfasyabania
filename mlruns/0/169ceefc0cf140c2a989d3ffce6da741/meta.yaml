@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Asus/Documents/Eksperimen_MSML_UlfaSyabania/mlruns/0/169ceefc0cf140c2a989d3ffce6da741/artifacts
+end_time: 1750408712635
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 169ceefc0cf140c2a989d3ffce6da741
+run_name: gregarious-koi-699
+run_uuid: 169ceefc0cf140c2a989d3ffce6da741
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750408149020
+status: 4
+tags: []
+user_id: Asus

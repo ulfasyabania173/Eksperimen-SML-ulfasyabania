@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Asus/Documents/Eksperimen_MSML_UlfaSyabania/mlruns/0/e98faeb229c946e7b4bbbff1ca663f68/artifacts
+end_time: 1750409427171
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e98faeb229c946e7b4bbbff1ca663f68
+run_name: polite-cow-311
+run_uuid: e98faeb229c946e7b4bbbff1ca663f68
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750409347383
+status: 4
+tags: []
+user_id: Asus
