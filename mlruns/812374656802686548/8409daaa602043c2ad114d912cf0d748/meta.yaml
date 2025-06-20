@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/Asus/Documents/Eksperimen_MSML_UlfaSyabania/mlruns/812374656802686548/8409daaa602043c2ad114d912cf0d748/artifacts
+end_time: 1750430222211
+entry_point_name: ''
+experiment_id: '812374656802686548'
+lifecycle_stage: active
+run_id: 8409daaa602043c2ad114d912cf0d748
+run_name: LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750430110094
+status: 3
+tags: []
+user_id: Asus

@@ -28,3 +28,27 @@
    ```
 
 Pipeline akan berjalan sesuai environment dan script yang sudah didefinisikan.
+
+## Struktur Folder Penting
+- `Workflow-CI/MLProject/MLproject` : Definisi pipeline MLflow Project.
+- `Workflow-CI/MLProject/conda.yaml` : Environment pipeline.
+- `Workflow-CI/MLProject/modeling_ulfasyabania.py` : Script training utama.
+- `Preprocessing/iris_preprocessing.csv` : Data hasil preprocessing.
+- `.github/workflows/ci-mlflow.yml` : Workflow GitHub Actions untuk CI/CD MLflow Project.
+- `mlruns/` : Folder log dan artefak MLflow lokal.
+
+## Troubleshooting
+- Jika pipeline gagal di CI, cek log Actions di GitHub untuk detail error.
+- Pastikan semua dependency sudah terdaftar di `conda.yaml` dan `requirements.txt`.
+- Untuk monitoring Prometheus, pastikan model di-log dengan MLflow >=2.4.0 dan dependency `prometheus-client` sudah ada.
+
+## Tips
+- Untuk menjalankan pipeline di environment baru, cukup jalankan perintah `mlflow run ...` seperti di atas.
+- Untuk serve model hasil training, gunakan path model yang dicetak script training, lalu jalankan:
+  ```bash
+  mlflow models serve -m <path_model> -p 1234 --env-manager=conda
+  ```
+- Untuk monitoring, lakukan request prediksi ke endpoint `/invocations` lalu cek `/metrics`.
+
+---
+Pipeline Workflow-CI ini dirancang agar reproducible, mudah diotomasi, dan siap untuk kebutuhan CI/CD modern berbasis MLflow.

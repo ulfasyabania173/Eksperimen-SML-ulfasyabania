@@ -1,0 +1,10 @@
+digest: c1932e5e
+name: dataset
+profile: '{"num_rows": 30, "num_elements": 120}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "sepal length (cm)", "required":
+  true}, {"type": "double", "name": "sepal width (cm)", "required": true}, {"type":
+  "double", "name": "petal length (cm)", "required": true}, {"type": "double", "name":
+  "petal width (cm)", "required": true}]}'
+source: '{"tags": {"mlflow.user": "Asus", "mlflow.source.name": "Workflow-CI\\MLProject\\modeling_ulfasyabania.py",
+  "mlflow.source.type": "LOCAL", "mlflow.source.git.commit": "2fa6edde3f3b0aa84f097f671429fe5699f0a0c8"}}'
+source_type: code

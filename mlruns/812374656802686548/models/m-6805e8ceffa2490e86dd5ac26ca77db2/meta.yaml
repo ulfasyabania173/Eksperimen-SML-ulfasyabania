@@ -1,0 +1,10 @@
+artifact_location: file:///C:/Users/Asus/Documents/Eksperimen_MSML_UlfaSyabania/mlruns/812374656802686548/models/m-6805e8ceffa2490e86dd5ac26ca77db2/artifacts
+creation_timestamp: 1750430110940
+experiment_id: '812374656802686548'
+last_updated_timestamp: 1750430183815
+model_id: m-6805e8ceffa2490e86dd5ac26ca77db2
+model_type: null
+name: model
+source_run_id: 8409daaa602043c2ad114d912cf0d748
+status: 2
+status_message: null

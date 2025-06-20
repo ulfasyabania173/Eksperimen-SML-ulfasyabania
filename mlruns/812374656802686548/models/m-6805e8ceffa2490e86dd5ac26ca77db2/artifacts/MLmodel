@@ -1,0 +1,31 @@
+artifact_path: file:///C:/Users/Asus/Documents/Eksperimen_MSML_UlfaSyabania/mlruns/812374656802686548/models/m-6805e8ceffa2490e86dd5ac26ca77db2/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.1
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.2
+is_signature_from_type_hint: false
+mlflow_version: 3.1.0
+model_id: m-6805e8ceffa2490e86dd5ac26ca77db2
+model_size_bytes: 966
+model_uuid: m-6805e8ceffa2490e86dd5ac26ca77db2
+prompts: null
+run_id: 8409daaa602043c2ad114d912cf0d748
+signature:
+  inputs: '[{"type": "double", "name": "sepal length (cm)", "required": true}, {"type":
+    "double", "name": "sepal width (cm)", "required": true}, {"type": "double", "name":
+    "petal length (cm)", "required": true}, {"type": "double", "name": "petal width
+    (cm)", "required": true}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2025-06-20 14:35:11.104885'

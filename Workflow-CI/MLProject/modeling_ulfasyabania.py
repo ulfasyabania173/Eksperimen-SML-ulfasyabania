@@ -6,6 +6,12 @@ from sklearn.metrics import accuracy_score, classification_report
 import mlflow
 import mlflow.sklearn
 import sys
+import prometheus_client
+
+# requirements tambahan untuk monitoring Prometheus
+# Pastikan prometheus-client terinstall
+# Untuk conda: conda install -c conda-forge prometheus_client
+# Untuk pip: pip install prometheus-client
 
 # Aktifkan autolog MLflow
 mlflow.sklearn.autolog()
@@ -23,7 +29,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # Mulai MLflow run
 mlflow.set_experiment('Iris-Classification-ulfasyabania')
-with mlflow.start_run(run_name='LogisticRegression'):
+with mlflow.start_run(run_name='LogisticRegression') as run:
     # Inisialisasi dan latih model
     model = LogisticRegression(max_iter=200)
     model.fit(X_train, y_train)
@@ -44,3 +50,6 @@ with mlflow.start_run(run_name='LogisticRegression'):
     print(f"Akurasi: {acc}")
     print("Model dan artefak telah disimpan di MLflow Tracking UI.")
     print("Buka MLflow UI dengan perintah: mlflow ui")
+    # Print path model MLflow
+    model_uri = f"mlruns/{run.info.experiment_id}/{run.info.run_id}/artifacts/model"
+    print(f"Path model MLflow: {model_uri}")
