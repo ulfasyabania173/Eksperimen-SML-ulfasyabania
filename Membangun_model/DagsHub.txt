@@ -1,0 +1,14 @@
+# Laporan Eksperimen MLflow di DagsHub
+
+## Deskripsi
+Eksperimen ini melakukan pelatihan dan tuning model Logistic Regression pada dataset Iris, dengan pencatatan seluruh metrik, parameter, dan artefak ke MLflow Tracking UI yang terhubung ke DagsHub.
+
+## Langkah-langkah Utama
+1. **Preprocessing**: Data diproses otomatis dan disimpan pada `Preprocessing/iris_preprocessing.csv`.
+2. **Training & Tuning**: Model Logistic Regression dilatih dengan grid search hyperparameter (C, solver, max_iter).
+3. **Logging Manual**: Semua parameter, metrik (accuracy, f1_weighted, confusion_matrix_sum), model, classification report, dan confusion matrix dicatat secara manual ke MLflow DagsHub.
+4. **Tracking Online**: Semua hasil eksperimen dapat dipantau dan diunduh melalui DagsHub MLflow Tracking UI.
+
+## Tautan Eksperimen DagsHub
+- Halaman eksperimen: https://dagshub.com/ulfasyabania173/Eksperimen-SML-ulfasyabania/experiments
+- MLflow Tracking UI: https://dagshub.com/ulfasyabania173/Eksperimen-SML-ulfasyabania.mlflow/#/experiments/0?searchFilter=&orderByKey=attributes.start_time&orderByAsc=false&startTime=ALL&lifecycleFilter=Active&modelVersionFilter=All+Runs&datasetsFilter=W10%3D
