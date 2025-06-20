@@ -6,8 +6,11 @@ from sklearn.metrics import accuracy_score, classification_report
 import mlflow
 import mlflow.sklearn
 
+# Aktifkan autolog MLflow
+mlflow.sklearn.autolog()
+
 # Load preprocessed data
-DATA_PATH = '../Preprocessing/iris_preprocessing.csv'
+DATA_PATH = 'Preprocessing/iris_preprocessing.csv'
 df = pd.read_csv(DATA_PATH)
 
 # Pisahkan fitur dan target
@@ -30,11 +33,6 @@ with mlflow.start_run(run_name='LogisticRegression'):
     # Evaluasi
     acc = accuracy_score(y_test, y_pred)
     report = classification_report(y_test, y_pred, output_dict=True)
-
-    # Log parameter, metrik, dan model ke MLflow
-    mlflow.log_param('model_type', 'LogisticRegression')
-    mlflow.log_metric('accuracy', float(acc))
-    mlflow.sklearn.log_model(model, 'model')
 
     # Log classification report sebagai artefak
     import json
