@@ -1,0 +1,31 @@
+# Draf Laporan Proses Eksperimen MSML
+
+## 1. Deskripsi Proses
+
+1. **Pengambilan Dataset**
+   - Dataset Iris diambil dari pustaka scikit-learn menggunakan script Python.
+   - Data disimpan dalam format CSV (`iris_raw.csv`).
+
+2. **Preprocessing Otomatis**
+   - Script `automate_ulfasyabania.py` dibuat untuk melakukan preprocessing otomatis:
+     - Menghapus duplikasi data
+     - Memisahkan fitur dan target
+     - Standarisasi fitur menggunakan StandardScaler
+     - Split data menjadi training dan testing
+     - Menyimpan hasil ke file `iris_preprocessing.csv`
+
+3. **Automasi dengan GitHub Actions**
+   - Workflow GitHub Actions dibuat agar setiap ada perubahan pada script/dataset, proses preprocessing dijalankan otomatis.
+   - Hasil preprocessing diunggah sebagai artifact pada Actions.
+
+4. **Publikasi ke GitHub**
+   - Seluruh folder dan file dipush ke repository GitHub.
+   - Workflow dapat diakses dan dijalankan secara publik.
+
+## 2. Tautan Repository GitHub
+
+https://github.com/ulfasyabania173/Eksperimen-SML-ulfasyabania
+
+## 3. Catatan
+- Semua proses dapat direplikasi dengan menjalankan script dan workflow yang tersedia di repository.
+- Jika workflow tidak berjalan, pastikan pengaturan billing GitHub sudah aktif.
