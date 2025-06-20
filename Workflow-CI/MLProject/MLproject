@@ -1,0 +1,10 @@
+name: Iris-MLflow-Project
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      data_path: {type: str, default: '../../Preprocessing/iris_preprocessing.csv'}
+    command: >
+      python ../../Membangun_model/modeling_ulfasyabania.py

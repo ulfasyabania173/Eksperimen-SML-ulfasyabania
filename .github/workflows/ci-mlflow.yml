@@ -1,0 +1,32 @@
+name: CI retrain model on push
+
+on:
+  push:
+    paths:
+      - 'Preprocessing/iris_preprocessing.csv'
+      - 'Membangun_model/modeling_ulfasyabania.py'
+      - 'Workflow-CI/MLProject/MLproject'
+      - 'Workflow-CI/MLProject/conda.yaml'
+      - '.github/workflows/ci-mlflow.yml'
+  workflow_dispatch:
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          python-version: '3.10'
+
+      - name: Install MLflow and dependencies
+        run: |
+          conda env update -f Workflow-CI/MLProject/conda.yaml -n base
+
+      - name: Run MLflow Project
+        run: |
+          mlflow run Workflow-CI/MLProject -P data_path=Preprocessing/iris_preprocessing.csv
