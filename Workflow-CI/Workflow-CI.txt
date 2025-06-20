@@ -1,0 +1,30 @@
+# Penjelasan Pipeline Workflow-CI
+
+1. **MLProject**
+   - File `MLproject` mendefinisikan entry point utama pipeline, yaitu menjalankan script training model (`modeling_ulfasyabania.py`) dengan parameter data_path.
+   - Pipeline ini dapat dijalankan secara lokal maupun otomatis oleh workflow CI.
+
+2. **conda.yaml**
+   - Mendefinisikan environment Python dan dependensi yang dibutuhkan untuk menjalankan pipeline MLflow Project.
+   - Memastikan environment selalu konsisten di setiap run, baik lokal maupun di CI.
+
+3. **Integrasi dengan GitHub Actions**
+   - Workflow CI (`.github/workflows/ci-mlflow.yml`) akan otomatis menjalankan MLflow Project setiap ada perubahan pada file terkait (data, script, atau pipeline).
+   - Pipeline akan:
+     - Setup environment dengan conda.yaml
+     - Menjalankan MLflow Project (`mlflow run`)
+     - Menghasilkan artefak model dan log training
+     - Mengunggah artefak ke halaman Actions GitHub
+
+4. **Manfaat**
+   - Memastikan proses retraining model selalu otomatis, reproducible, dan terdokumentasi.
+   - Semua artefak dan log dapat diakses dan diunduh dari GitHub.
+
+## Cara Menjalankan Pipeline Secara Manual
+1. Masuk ke folder utama project.
+2. Jalankan:
+   ```bash
+   mlflow run Workflow-CI/MLProject -P data_path=Preprocessing/iris_preprocessing.csv
+   ```
+
+Pipeline akan berjalan sesuai environment dan script yang sudah didefinisikan.

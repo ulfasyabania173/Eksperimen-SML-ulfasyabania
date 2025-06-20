@@ -30,3 +30,9 @@ jobs:
       - name: Run MLflow Project
         run: |
           mlflow run Workflow-CI/MLProject -P data_path=Preprocessing/iris_preprocessing.csv
+
+      - name: Upload model artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: trained_model_artifacts
+          path: mlruns/**
